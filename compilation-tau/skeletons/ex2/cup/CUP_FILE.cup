@@ -68,12 +68,20 @@ terminal LBRACE;
 terminal RBRACE;
 terminal SEMICOLON;
 terminal ASSIGN;
-
+terminal GT;
+terminal LT;
+terminal TYPE_INT;
+terminal TYPE_STRING;
+terminal TYPE_VOID;
+terminal COMMA;
+terminal EXTENDS;
+terminal NIL;
 /*************/
 /* TERMINALS */
 /*************/
 terminal Integer INT;
 terminal String ID;
+
 
 /*****************/
 /* NON TERMINALS */
