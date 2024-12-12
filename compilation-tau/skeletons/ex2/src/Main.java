@@ -68,3 +68,57 @@ public class Main
 }
 
 
+
+
+
+
+
+
+package AST;
+
+
+
+// AST_TYPE: Type declaration
+
+
+
+
+// AST_STMT: Base class for statements
+public abstract class AST_STMT extends AST_Node {}
+
+// AST_STMT_ASSIGN: Assignment statement
+public class AST_STMT_ASSIGN extends AST_STMT {
+    public AST_EXP var;
+    public AST_EXP exp;
+
+    public AST_STMT_ASSIGN(AST_EXP var, AST_EXP exp) {
+        this.var = var;
+        this.exp = exp;
+    }
+
+    @Override
+    public void printMe() {
+        System.out.println("AST_STMT_ASSIGN Node");
+        if (var != null) var.printMe();
+        if (exp != null) exp.printMe();
+    }
+}
+
+// AST_ARRAY_TYPEDEF: Array typedef declaration
+public class AST_ARRAY_TYPEDEF extends AST_DEC {
+    public String name;
+    public AST_TYPE type;
+
+    public AST_ARRAY_TYPEDEF(String name, AST_TYPE type) {
+        this.name = name;
+        this.type = type;
+    }
+
+    @Override
+    public void printMe() {
+        System.out.println("AST_ARRAY_TYPEDEF Node: " + name);
+        if (type != null) type.printMe();
+    }
+}
+
+
